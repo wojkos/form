@@ -5,10 +5,9 @@ class FormreciverController < ApplicationController
   end
 
   def create
-    puts params
     @user = User.new
     @address = Address.new
-    
+
     @user.name = params['name']
     @user.email = params['email']
     if @user.save
