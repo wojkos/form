@@ -16,12 +16,13 @@ class FormreciverController < ApplicationController
       @address.street_name = params['street_name']
       @address.street_name_number = params['street_name_number']
       if @address.save
-        head 201
+        redirect_to users_path, notice: 'Form was successfully created.'
       else
-        render :new, notice: 'wrong address'
+        @user.destroy!
+        render :new
       end
     else
-      render :new, notice: 'wrong user data'
+      render :new
     end
   end
 end

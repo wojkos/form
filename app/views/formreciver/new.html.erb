@@ -1,34 +1,32 @@
 <h1>FORM NEW</h1>
-  <% if @user.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
-
-      <ul>
+<% if @user.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+    <ul>
       <% @user.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
-      </ul>
-    </div>
-  <% end %>
-  <% if @address.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@address.errors.count, "error") %> prohibited this user from being saved:</h2>
-
-      <ul>
+    </ul>
+  </div>
+<% end %>
+<% if @address.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@address.errors.count, "error") %> prohibited this user from being saved:</h2>
+    <ul>
       <% @address.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
-      </ul>
-    </div>
-  <% end %>
+    </ul>
+  </div>
+<% end %>
 <%=form_tag('/create', method: 'post') do%>
   <%= label_tag(:name, "Name") %>
   <%= text_field_tag(:name) %>
-  <%= label_tag(:email, "email") %>
+  <%= label_tag(:email, "Email") %>
   <%= text_field_tag(:email) %>  
-  <%= label_tag(:street_name, "street_name") %>
+  <%= label_tag(:street_name, "Street Name") %>
   <%= text_field_tag(:street_name) %>
-  <%= label_tag(:street_name_number, "street_name_number") %>
+  <%= label_tag(:street_name_number, "Street name number") %>
   <%= number_field_tag(:street_name_number) %>
   <%= label_tag(:city, "City") %>
   <%= text_field_tag(:city) %>

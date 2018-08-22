@@ -29,7 +29,7 @@ Metrics/BlockLength:
     - 'spec/**/*.rb'
 
 Metrics/AbcSize:
-  Max: 20
+  Max: 22
 
 Metrics/LineLength:
   Max: 80
